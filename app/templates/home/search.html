@@ -1,0 +1,31 @@
+{% extends "home/home.html" %}
+{% import "ui/s_page.html" as pg %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <ol class="breadcrumb" style="margin-top:6px;">
+            <li>与"{{ key }}"有关的电影，共{{ movie_count }}部</li>
+        </ol>
+    </div>
+    <div class="col-md-12">
+        {% for v in page_data.items %}
+        <div class="media">
+            <div class="media-left">
+                <a href="{{ url_for('home.play',id=v.id,page=1) }}">
+                    <img class="media-object" style="width:131px;height:83px;" src="{{ url_for('static',filename='uploads/'+v.logo) }}" alt="{{ v.title }}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ v.title }}<a href="{{ url_for('home.play',id=v.id,page=1) }}" class="label label-primary pull-right"><span
+                        class="glyphicon glyphicon-play"></span>播放影片</a></h4>
+                {{ v.info }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-12 text-center">
+        {{ pg.page(page_data,'home.search') }}
+    </div>
+</div>
+{% endblock %}
