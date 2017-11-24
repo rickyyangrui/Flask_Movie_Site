@@ -180,6 +180,20 @@ from . improt admin
 | reason | 操作原因，字符串型   |
 | addtime| 添加时间，日期时间类型，默认为当前时间 |
 
+## 运行本项目
+
+其实很简单，用pycharm很快就能搭建好我们需要的环境，同时安装好mysql，在IED中输入：
+```
+python manage.py runserver
+```
+
+## 界面截图
+主界面
+![主界面](https://github.com/rickyyangrui/Flask_Movie_Site/blob/master/screenshoots/%E4%B8%BB%E7%95%8C%E9%9D%A2.png)
+后台
+![后台](https://github.com/rickyyangrui/Flask_Movie_Site/blob/master/screenshoots/%E5%90%8E%E5%8F%B0.png)
+
+
 
 
 
